@@ -1,5 +1,6 @@
 package com.design.xiaoze_chen.cproject.server;
 
+import com.design.xiaoze_chen.cproject.bean.BrandBean;
 import com.design.xiaoze_chen.cproject.bean.WeatherBean;
 
 import io.reactivex.Observable;
@@ -19,4 +20,7 @@ public interface RetrofitServer {
      */
     @GET("weather_mini")
     Observable<WeatherBean> getWeatherData(@Query("city") String city);
+
+    @GET("car/brand")
+    Observable<BrandBean> getBrandBeanData(@Query("Authorization") String appCode);
 }
