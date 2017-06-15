@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -38,16 +37,15 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 /**
- * 支持下拉刷新和上拉加载更多<br>
- * 非侵入式，对原来的ListView、RecyclerView没有任何影响,用法和SwipeRefreshLayout类似。<br>
- * 可自定义头部View的样式，调用setHeaderView方法即可 <br>
- * 可自定义页尾View的样式，调用setFooterView方法即可 <br>
- * 支持RecyclerView，ListView，ScrollView，GridView等等。<br>
- * 被包含的View(RecyclerView,ListView etc.)可跟随手指的滑动而滑动<br>
- * 默认是跟随手指的滑动而滑动，也可以设置为不跟随：setTargetScrollWithLayout(false) 回调方法更多<br>
- * 比如：onRefresh() onPullDistance(int distance)和onPullEnable(boolean
- * enable)<br>
- * 开发人员可以根据下拉过程中distance的值做一系列动画。 <br>
+ * 支持下拉刷新和上拉加载更多
+ * 非侵入式，对原来的ListView、RecyclerView没有任何影响,用法和SwipeRefreshLayout类似。
+ * 可自定义头部View的样式，调用setHeaderView方法即可
+ * 可自定义页尾View的样式，调用setFooterView方法即可
+ * 支持RecyclerView，ListView，ScrollView，GridView等等。
+ * 被包含的View(RecyclerView,ListView etc.)可跟随手指的滑动而滑动
+ * 默认是跟随手指的滑动而滑动，也可以设置为不跟随：setTargetScrollWithLayout(false) 回调方法更多
+ * 比如：onRefresh() onPullDistance(int distance)和onPullEnable(booleanenable)
+ * 开发人员可以根据下拉过程中distance的值做一系列动画。
  */
 public class CustomSwipeRefreshLayout extends ViewGroup {
     private static final String LOG_TAG = "CustomSwipeRefreshLayout";
@@ -880,8 +878,7 @@ public class CustomSwipeRefreshLayout extends ViewGroup {
                 final int pointerIndex = MotionEventCompat.findPointerIndex(ev,
                         mActivePointerId);
                 if (pointerIndex < 0) {
-                    Log.e(LOG_TAG,
-                            "Got ACTION_MOVE event but have an invalid active pointer id.");
+                    Log.e(LOG_TAG, "Got ACTION_MOVE event but have an invalid active pointer id.");
                     return false;
                 }
                 final float y = MotionEventCompat.getY(ev, pointerIndex);
